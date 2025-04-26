@@ -3022,7 +3022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 553109820}
-  starCounterText: {fileID: 0}
   collectedStars: 0
   player: {fileID: 325646879}
 --- !u!1001 &544058147
@@ -4509,8 +4508,8 @@ Tilemap:
   - first: {x: -5, y: 2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 4
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4579,8 +4578,8 @@ Tilemap:
   - first: {x: 4, y: 2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 3
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4748,19 +4747,23 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 52
+  - m_RefCount: 50
     m_Data: {fileID: 11400000, guid: 0ff56741dcd243d46a40359e19078880, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: d6cf6e8bb3e82514d94ca4d09ddfecba, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: ab8819212d6d1f5428b19b51ae380b6a, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 69a8a3f15b9acc242961e815bf25970f, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a6826d54d2025df48b1b1ab0c7e03bb6, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 52
+  - m_RefCount: 50
     m_Data: {fileID: -694846660135189599, guid: 2d20f576b3012514fad1b75ac1bdf839, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -3811939914416976781, guid: 91b45d209bdbf3a42b884db74657b4c2, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 742342948379399308, guid: 75763ef4a5962cd4eaf6208e7013d2dc, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -6916187400767968485, guid: a52449526d5dca448b3b5f248683b11a, type: 3}
   - m_RefCount: 1
