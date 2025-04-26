@@ -12,7 +12,7 @@ public class PuzzlePiece : MonoBehaviour
     [Header("Puzzle Zone")]
     public Vector2 zoneSize = new Vector2(40f, 40f); 
     public float zoneOffset = 0f;
-    private int playerCount = 0;
+    public int playerCount = 0;
     
     void Start()
     {
@@ -54,7 +54,7 @@ public class PuzzlePiece : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Vector3 offset = new Vector3(0, zoneOffset, 0);
-        Vector3 size = new Vector3(zoneSize.x-0.8f, zoneSize.y-0.8f, 0);
+        Vector3 size = new Vector3(zoneSize.x, zoneSize.y, 0);
         Gizmos.DrawWireCube(transform.position + offset, size);
     }
 #endif

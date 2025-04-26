@@ -63,8 +63,11 @@ public class PuzzlePiecesController : MonoBehaviour
                 }
                 if (IsAdjacent(piece.transform.position, emptyPiece.transform.position))
                 {
+                    
+                    
                     Debug.Log(piece.transform.position);
-                    StartCoroutine(SwapPiece(piece));
+                    StartCoroutine(SwapPiece(piece, pieceScript));
+                    
                 }
                 break;
             }
@@ -75,6 +78,7 @@ public class PuzzlePiecesController : MonoBehaviour
     {
         foreach (GameObject piece in pieces)
         {
+            
             PuzzlePiece pieceScript = piece.GetComponent<PuzzlePiece>();
             if (Vector3.Distance(piece.transform.position, mousePosition) < pieceSize*0.5)
             {
@@ -83,7 +87,7 @@ public class PuzzlePiecesController : MonoBehaviour
                     Debug.Log("Can't rotate piece！");
                     return;
                 }
-                StartCoroutine(RotatePiece(piece));
+                StartCoroutine(RotatePiece(piece, pieceScript));
                 break;
             }
         }
@@ -98,13 +102,23 @@ public class PuzzlePiecesController : MonoBehaviour
     }
 
     //change position with the emptyslot
-    IEnumerator SwapPiece(GameObject piece)
+    IEnumerator SwapPiece(GameObject piece, PuzzlePiece pieceScript)
     {
         Debug.Log("Move piece");
         Vector2 pieceOldPos = piece.transform.position;
         Vector2 pieceNewPos = emptyPiece.transform.position;
         float timeElapsed = 0f;
         float duration = pieceMovingDuration;
+        
+        //Disable colliders in the piece before moving
+        Collider2D[] colliders = piece.GetComponentsInChildren<Collider2D>();
+        if (pieceScript.playerCount == 0)
+        {
+            foreach (Collider2D col in colliders)
+            {
+                col.enabled = false;
+            }
+        }
         
         emptyPiece.SetActive(false);
         
@@ -118,9 +132,15 @@ public class PuzzlePiecesController : MonoBehaviour
         emptyPiece.transform.position = pieceOldPos;
         emptyPiece.SetActive(true);
         
+        //enable colliders in the piece after moving
+        foreach (Collider2D col in colliders)
+        {
+            col.enabled = true;
+        }
+        
     }
     
-    IEnumerator RotatePiece(GameObject piece)
+    IEnumerator RotatePiece(GameObject piece,PuzzlePiece pieceScript)
     {
         
         Debug.Log("Rotating piece");
@@ -129,6 +149,17 @@ public class PuzzlePiecesController : MonoBehaviour
         Vector3 rotatingScale = piece.transform.localScale * minScale;
         float timeElapsed = 0f;
         float duration = pieceRotationDuration;
+        
+        //Disable colliders in the piece before rotating
+        Collider2D[] colliders = piece.GetComponentsInChildren<Collider2D>();
+        if (pieceScript.playerCount == 0)
+        {
+            foreach (Collider2D col in colliders)
+            {
+                col.enabled = false;
+            }
+        }
+        
         while (timeElapsed < duration)
         {
             float t= timeElapsed / duration;
@@ -154,5 +185,11 @@ public class PuzzlePiecesController : MonoBehaviour
         rotation.z = Mathf.Round(rotation.z / 90) * 90; 
         piece.transform.eulerAngles = rotation;
         piece.transform.rotation = Quaternion.Euler(rotation);
+        
+        //enable colliders in the piece after rotating
+        foreach (Collider2D col in colliders)
+        {
+            col.enabled = true;
+        }
     }
 }

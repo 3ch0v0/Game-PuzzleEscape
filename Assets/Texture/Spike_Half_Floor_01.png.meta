@@ -129,9 +129,9 @@ TextureImporter:
       name: Spike_Half_0
       rect:
         serializedVersion: 2
-        x: 226
+        x: 206
         y: 355
-        width: 509
+        width: 545
         height: 471
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -139,10 +139,12 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -255.5, y: -239.5}
-        - {x: 252.5, y: -238.5}
-        - {x: 254.5, y: -6.5}
-        - {x: -254.5, y: -6.5}
+      - - {x: -235.5, y: -112.5}
+        - {x: -239.5, y: -235.5}
+        - {x: 240.5, y: -235.5}
+        - {x: 239.5, y: -108.5}
+        - {x: 190.5, y: 2.5}
+        - {x: -171.5, y: 5.5}
       tessellationDetail: 0
       bones: []
       spriteID: 088485ce9d2caf980800000000000000

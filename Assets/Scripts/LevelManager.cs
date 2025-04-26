@@ -4,8 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject destination;          // 终点
-    public Text starCounterText;            // UI 显示（Text 或 TextMeshProUGUI）
+    public GameObject destination;            
     private int totalStars;
     public int collectedStars = 0;
     private bool destinationActive = false;
@@ -13,12 +12,10 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        destination?.SetActive(false); // 关掉传送点
-
-        // 统计星星总数
+        destination?.SetActive(false); 
+        
         totalStars = GameObject.FindGameObjectsWithTag("Star").Length;
         
-        //UpdateStarUI();
     }
 
     void Update()
@@ -33,27 +30,19 @@ public class LevelManager : MonoBehaviour
     {
         collectedStars++;
         player.gravityNum++;
-        //UpdateStarUI();
 
         if (collectedStars >= totalStars && !destinationActive)
         {
             ActivateDestination();
         }
     }
-
-    // void UpdateStarUI()
-    // {
-    //     if (starCounterText != null)
-    //     {
-    //         starCounterText.text = $"Stars: {collectedStars} / {totalStars}";
-    //     }
-    // }
+    
 
     void ActivateDestination()
     {
         destinationActive = true;
         destination?.SetActive(true);
-        Debug.Log("Destination activated!");
+        Debug.Log("Destination activated");
     }
 
     public void TriggerLevelComplete()
@@ -67,7 +56,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("🎉 Game completed!");
+            Debug.Log("Game completed");
         }
     }
     
