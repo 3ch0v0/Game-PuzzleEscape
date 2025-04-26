@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Circle
+  m_Name: Stage
   m_Shader: {fileID: -6465566751694194690, guid: f67f213e88306234fa8db9319d59d833, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -47,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: fe8a67cdea48e5f4caa16c280d6ed701, type: 3}
+        m_Texture: {fileID: 2800000, guid: b8a6a1e37528ae14ebe70533ac8e264c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -74,7 +74,7 @@ Material:
     m_Floats:
     - _ANIAMTIONMODE: 2
     - _ANIMATIONSWITCH: 0
-    - _Alpha: 1.6
+    - _Alpha: 1
     - _EnableExternalAlpha: 0
     - _MoveRange: 1
     - _MovementSpeed: 0
@@ -85,6 +85,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TextureColor: {r: 0.9245283, g: 0.5760054, b: 0.45179778, a: 0}
+    - _TextureColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
