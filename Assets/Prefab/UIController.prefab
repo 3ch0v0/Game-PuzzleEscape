@@ -46,3 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityNumText: {fileID: 0}
   pCScripts: {fileID: 0}
+  pressAnyKeyPanel: {fileID: 0}
+  stageUIs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  stageClearUI: {fileID: 0}
